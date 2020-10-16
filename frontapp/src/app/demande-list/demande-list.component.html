@@ -1,0 +1,33 @@
+<div class="panel panel-default">
+  
+<div class="panel panel-primary">
+  <div class="panel-heading">
+    <h2>Demande List</h2>
+  </div>
+  <div class="panel-body">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Titer</th>
+          <th>Description</th>
+          <th>Debut</th>
+          <th>Numbjours</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let demande of demandes | async">
+          <td>{{ demande.titer}}</td>
+          <td>{{ demande.description}}</td>
+          <td>{{ demande.debut}}</td>
+          <td>{{ demande.numbjours}}</td>
+          <td><button (click)="deleteDemande(demande.id)" class="btn btn-danger">Delete</button>
+          
+          <button (click)="demandeDetailles(demande.id)" class="btn btn-info" style="margin-left: 10px">Detaills</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
